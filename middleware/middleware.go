@@ -11,4 +11,5 @@ func SetupMiddleWare(app *fiber.App, userRepository repository.Repository) {
 	authHandler := auth.NewHandler(authService)
 	app.Use("/user", authHandler.AuthUserHandler)
 	app.Use("/admin", authHandler.AuthAdminHandler)
+	app.Use("/editor",authHandler.AuthEditorHandler)
 }
